@@ -15,7 +15,8 @@ class Program
         transport.S3("drk.bucketname", "drk");
         transport.QueueNamePrefix("drk");
 
-        transport.Routing().RegisterPublisher(typeof(MyEvent), "Drk.Samples.Sqs.SimpleReceiver");
+        var sub = transport.EnableMessageDrivenPubSubCompatibilityMode();
+        sub.RegisterPublisher(typeof(MyEvent), "Drk.Samples.Sqs.SimpleReceiver");
 
         var p = endpointConfiguration.UsePersistence<SqlPersistence>();
         p.ConnectionBuilder(() => new SqlConnection(@"Server=localhost,1433;Initial Catalog=NsbSamplesSqlPersistence;User Id=SA;Password=yourStrong(!)Password;Encrypt=false"));

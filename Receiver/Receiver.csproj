@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Shared\Shared.csproj" />    
+    <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
-    <PackageReference Include="NServiceBus.AmazonSQS" Version="4.4.2" />
+    <PackageReference Include="NServiceBus.AmazonSQS" Version="5.7.3" />
     <PackageReference Include="NServiceBus.Persistence.Sql" Version="6.6.5" />
   </ItemGroup>
 
