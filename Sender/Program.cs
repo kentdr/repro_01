@@ -11,6 +11,8 @@ class Program
         #region ConfigureEndpoint
 
         var endpointConfiguration = new EndpointConfiguration("Drk.Samples.Sqs.SimpleSender");
+        endpointConfiguration.UseSerialization<XmlSerializer>();
+
         var transport = endpointConfiguration.UseTransport<SqsTransport>();
         transport.S3("drk.bucketname", "drk");
         transport.QueueNamePrefix("drk");
